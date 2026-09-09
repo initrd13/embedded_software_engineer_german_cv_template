@@ -1,0 +1,172 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{fix-cm}
+\usepackage[a4paper,left=1.65cm,right=1.65cm,top=1.55cm,bottom=1.55cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Liberation Sans}
+\usepackage[main=english,ngerman]{babel}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{ragged2e}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{linkblue}{HTML}{0645AD}
+\definecolor{cvdark}{HTML}{202020}
+\definecolor{cvgray}{HTML}{666666}
+
+\pagestyle{empty}
+\RaggedRight
+\sloppy
+\emergencystretch=3em
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.12em}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1.06}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\titleformat{\section}{\large\bfseries\color{cvdark}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0.48em}{0.18em}
+
+\setlist[itemize]{
+  leftmargin=1.18em,
+  itemsep=0.04em,
+  topsep=0.08em,
+  parsep=0em,
+  partopsep=0em
+}
+
+\newcommand{\cvsection}[1]{%
+  \Needspace{4\baselineskip}%
+  \section*{#1}%
+  \vspace{-0.32em}%
+  {\color{cvgray}\rule{\linewidth}{0.35pt}}%
+  \vspace{0.12em}%
+}
+
+\newcommand{\cventryheader}[3]{%
+  \Needspace{5\baselineskip}%
+  {\normalsize\textbf{#1}}\\[-0.10em]
+  {\normalsize\textbf{#2}}\\[-0.10em]
+  {\small\color{cvgray}#3}\par
+  \vspace{0.02em}%
+}
+
+\begin{document}
+\fontsize{9.4}{10.8}\selectfont
+
+% ---------------------------------------------------------------------------
+% Header
+% ---------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.76\linewidth}
+  {\LARGE\bfseries Max Mustermann}\par\vspace{0.12em}
+  {\large Senior Embedded Software Developer}\par\vspace{0.10em}
+  {\small\color{cvgray}
+    C/C++ \textbar{} RTOS \textbar{} Secure Bootloader \textbar{}
+    CANopen/TCP-Modbus \textbar{} BLE \textbar{} Test Automation
+  }\par\vspace{0.35em}
+
+  \begin{tabularx}{\linewidth}{@{}L{2.4cm}Y@{}}
+    \textbf{Address} & Musterstraße 12, 10115 Berlin, Germany \\
+    \textbf{Phone} & +49 30 12345678 \\
+    \textbf{Email} & \href{mailto:max.mustermann@example.com}{\textcolor{linkblue}{max.mustermann@example.com}} \\
+    \textbf{LinkedIn} & \href{https://www.linkedin.com/in/max-mustermann}{\textcolor{linkblue}{linkedin.com/in/max-mustermann}} \\
+  \end{tabularx}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.18\linewidth}
+  \vspace{-0.4em}
+  \raggedleft
+  \IfFileExists{template.png}{%
+    \includegraphics[width=\linewidth,height=3.6cm,keepaspectratio]{template.png}%
+  }{%
+    \setlength{\fboxsep}{0pt}%
+    \fbox{\parbox[c][3.6cm][c]{\linewidth}{\centering\small Profile\\Photo}}%
+  }
+\end{minipage}
+
+\cvsection{Profile}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+\cvsection{Key Achievements}
+
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\end{itemize}
+
+\cvsection{Technical Skills}
+
+\begin{tabularx}{\textwidth}{@{}L{3.4cm}Y@{}}
+  \textbf{Programming} & C, C++, Python \\
+  \textbf{Embedded/Firmware} & RTOS-based firmware, bare-metal firmware, secure bootloader, firmware updates, peripheral drivers, low-power operation, hardware bring-up, STM32 \\
+  \textbf{Communication} & CANopen, TCP-Modbus, BLE, SPI, UART, USB Virtual COM Port \\
+  \textbf{Testing/CI/Tools} & CMake, GoogleTest, Python test automation, End-of-Line testing, functional testing, module/integration testing, GCC, Clang, Git, GitLab, Docker, Jira, STM32CubeIDE, J-Link, logic analyzer, digital oscilloscope \\
+\end{tabularx}
+
+\cvsection{Professional Experience}
+
+\cventryheader{Senior Software Developer}{Mustertechnik GmbH, Berlin}{Jan 2022 -- Present}
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  \item Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+\end{itemize}
+
+\cventryheader{Software Developer}{Beispiel Automation GmbH, München}{Apr 2019 -- Dec 2021}
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  \item Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+\end{itemize}
+
+\cventryheader{Working Student -- Software Developer}{Muster Systems GmbH, Stuttgart}{Oct 2017 -- Mar 2019}
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+  \item Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+  \item Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
+\end{itemize}
+
+\cventryheader{Systems Engineer}{Demo Technologies GmbH, Frankfurt am Main}{Jul 2015 -- Sep 2017}
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\end{itemize}
+
+\cvsection{Education}
+
+\cventryheader{Master of Science (M.Sc.) in Embedded Systems}{Technische Universität Musterstadt}{Oct 2016 -- Mar 2019}
+
+\textbf{Thesis: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.}
+
+\begin{itemize}
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\end{itemize}
+
+\cventryheader{Bachelor of Engineering (B.Eng.) in Electronics Engineering}{Hochschule Musterstadt}{Oct 2012 -- Sep 2016}
+
+\cventryheader{Diploma in Electronics and Communication Engineering}{Muster Fachhochschule}{Aug 2009 -- Jul 2012}
+
+\cvsection{Languages}
+
+\begin{tabularx}{\textwidth}{@{}L{2.4cm}Y@{}}
+  \textbf{German} & Native \\
+  \textbf{English} & Business fluent -- C1 \\
+  \textbf{French} & Intermediate -- B1 \\
+\end{tabularx}
+
+\end{document}
